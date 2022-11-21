@@ -733,6 +733,8 @@ color: #FFFFFF;
         width: 100%;
         height: 100%;
         object-fit: cover;
+
+		 
     }
     @media (max-width: 780px){
         max-width: 100%;
@@ -802,6 +804,18 @@ color: #FFFFFF;
     background: url('./../img/menubar/bg-bar.jpg') center center/cover no-repeat;
     position: relative;
     z-index: 20;
+	 position: relative;
+
+	 &::after{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: -1;
+	 }
     @media (max-width: 727px){
         &::after{
             content: '';
@@ -871,12 +885,19 @@ color: #FFFFFF;
     aspect-ratio: 1/1;
     position: relative;
     margin-bottom: 22px;
+	 border-radius: 100%;
 
     img{
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 100%;
+			transition: .2s linear;
+		   @media(any-hover: hover){
+					 &:hover{
+						transform: scale(1.05);
+					 }
+				}
     }
 }
 .item-menubar__price {
@@ -1055,10 +1076,17 @@ color: #FFFFFF;
     }
 }
 .gallery__item {
+	overflow: hidden;
     img{
         height: 100%;
         width: 100%;
         object-fit: cover;
+		transition: .2s linear;
+		  @media(any-hover: hover){
+			&:hover{
+			  transform: scale(1.1);
+			}
+	  }
     }
 }
 .big-photo{
@@ -1118,11 +1146,19 @@ color: #FFFFFF;
 .cooks__item {
     max-width: 350px;
     aspect-ratio: 0.75/1;
+	 overflow: hidden;
 
     img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+		  transition: .2s linear;
+
+		   @media(any-hover: hover){
+					 &:hover{
+						transform: scale(1.1);
+					 }
+				}
     }
 
     @media (max-width: 600px){
@@ -1133,9 +1169,8 @@ color: #FFFFFF;
 
 /*-------------------- Footer -------------------------------- */
 .footer{
-    background: url(./../img/footer/bg.jpg) 50% 0% / cover no-repeat;
-    height: 100vh;
-    min-height: 400px;
+    background: url(./../img/footer/bg.jpg) 50% 50% / cover no-repeat;
+    height: 400px;
 
     @media (max-width: 768px){
         height: 500px;
